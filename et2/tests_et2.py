@@ -20,7 +20,7 @@ class DigitsSumTests(unittest.TestCase):
 
     def test_on_large_random_numbers(self) -> None:
         ''' Expected each value to be the same that counted inside subtest. '''
-        subtest_number : int = 10
+        subtest_number : int = 100000
         digits : list[int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         max_digits_in_number : int = 15
         for _ in range(subtest_number):
