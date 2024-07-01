@@ -30,6 +30,8 @@ class DigitsSumTests(unittest.TestCase):
                 digit : int = choice(digits)
                 sum_of_digits += digit
                 number += digit * 10 ** i
+            if choice([True, False]):
+                number *= -1
             with self.subTest(number = number, sum = sum_of_digits):
                 self.assertEqual(digits_sum(number), sum_of_digits)
 

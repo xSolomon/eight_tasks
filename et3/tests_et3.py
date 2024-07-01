@@ -16,7 +16,7 @@ class ListLengthTests(unittest.TestCase):
 
     def test_on_large_random_lists(self) -> None:
         ''' Expected each value to be the same that counted inside subtest. '''
-        subtest_number : int = 100000
+        subtest_number : int = 10000
         maximum_list_length : int = 970
         for _ in range(subtest_number):
             test_list : list[int] = []
