@@ -1,9 +1,9 @@
 ''' Check if string is palindrom. '''
 
-def is_palindrom(string_to_check : str) -> bool:
-    ''' For strings with length > 1, check equality of first and last character, and repeat. '''
-    if string_to_check == "":
+def is_palindrom(string_to_check : str, check_from_index : int = 0) -> bool:
+    ''' For strings with length > 1, checks whether it is palindrom. '''
+    if check_from_index >= len(string_to_check):
         return True
-    if string_to_check[0] != string_to_check[-1]:
+    if string_to_check[check_from_index] != string_to_check[-check_from_index - 1]:
         return False
-    return is_palindrom(string_to_check[1:-1])
+    return is_palindrom(string_to_check, check_from_index + 1)

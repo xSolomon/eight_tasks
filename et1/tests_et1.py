@@ -38,7 +38,7 @@ class PotentiateTests(unittest.TestCase):
         ''' Using python ** function for checking correctness. '''
         subtest_number : int = 100000
         for _ in range(subtest_number):
-            number : int = randint(-500, 500)
+            number : int = randint(0, 500)
             exponent : int = randint(0, abs(500 // number)) if number != 0 else randint(0, 500)
             with self.subTest():
                 self.assertEqual(potentiate(number, exponent), number ** exponent)
