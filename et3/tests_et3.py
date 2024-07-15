@@ -8,11 +8,11 @@ class ListLengthTests(unittest.TestCase):
     ''' Regression, border and random tests. '''
     def test_on_empty_list(self) -> None:
         ''' Expected 0 '''
-        self.assertEqual(list_length([]), len([]))
+        self.assertEqual(list_length([], 0), len([]))
 
     def test_on_single_elem_list(self) -> None:
         ''' Expected 1 '''
-        self.assertEqual(list_length([5]), len([5]))
+        self.assertEqual(list_length([5], 0), len([5]))
 
     def test_on_large_random_lists(self) -> None:
         ''' Expected each value to be the same that counted inside subtest. '''
@@ -24,7 +24,7 @@ class ListLengthTests(unittest.TestCase):
                 test_list.append(randint(-100, 100))
             expected_length : int = len(test_list)
             with self.subTest():
-                self.assertEqual(list_length(test_list), expected_length)
+                self.assertEqual(list_length(test_list, 0), expected_length)
             test_list.clear()
 
 unittest.main()

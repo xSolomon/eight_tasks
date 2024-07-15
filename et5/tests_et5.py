@@ -1,4 +1,4 @@
-''' Tests for list_length function. '''
+''' Tests for tast 5 solution function. '''
 
 import unittest
 import io
@@ -18,17 +18,17 @@ class PrintEvenValsFromListTests(unittest.TestCase):
 
     def test_on_empty_list(self) -> None:
         ''' Must print nothing '''
-        print_list([])
+        print_list([], 0)
         self.assertEqual(self.result.getvalue(), "")
 
     def test_on_single_odd_value_list(self) -> None:
         ''' Must print nothing. '''
-        print_list([5])
+        print_list([5], 0)
         self.assertEqual(self.result.getvalue(), "")
 
     def test_on_single_even_value_list(self) -> None:
         ''' Must print exactly that value. '''
-        print_list([4])
+        print_list([4], 0)
         self.assertEqual(self.result.getvalue(), "4\n")
 
     def test_on_some_predefined_lists(self) -> None:
@@ -38,7 +38,7 @@ class PrintEvenValsFromListTests(unittest.TestCase):
         expected_results : list[str] = ["2\n4\n6\n", "0\n0\n0\n0\n", "", "10\n8\n6\n4\n2\n0\n"]
         for i, input_list in enumerate(input_lists):
             with self.subTest():
-                print_list(input_list)
+                print_list(input_list, 0)
                 self.assertEqual(self.result.getvalue(), expected_results[i])
             self.result.truncate(0)
             self.result.seek(0)

@@ -8,15 +8,15 @@ class DigitsSumTests(unittest.TestCase):
     ''' Regression, border and random tests. '''
     def test_on_zero(self) -> None:
         ''' Expected 0 '''
-        self.assertEqual(digits_sum(0), 0)
+        self.assertEqual(digits_sum(0, 0), 0)
 
     def test_on_five(self) -> None:
         ''' Expected 5 '''
-        self.assertEqual(digits_sum(5), 5)
+        self.assertEqual(digits_sum(5, 0), 5)
 
     def test_on_142(self) -> None:
         ''' Expected 7 '''
-        self.assertEqual(digits_sum(142), 7)
+        self.assertEqual(digits_sum(142, 0), 7)
 
     def test_on_large_random_numbers(self) -> None:
         ''' Expected each value to be the same that counted inside subtest. '''
@@ -31,6 +31,6 @@ class DigitsSumTests(unittest.TestCase):
                 sum_of_digits += digit
                 number += digit * 10 ** i
             with self.subTest(number = number, sum = sum_of_digits):
-                self.assertEqual(digits_sum(number), sum_of_digits)
+                self.assertEqual(digits_sum(number, 0), sum_of_digits)
 
 unittest.main()
