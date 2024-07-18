@@ -5,12 +5,11 @@ def find_second_max_value(values : list[int], first_maximum : int, second_maximu
     ''' Given current maximums and index to search from, returns second maximum in the list. '''
     if len(values) <= find_from_index:
         return second_maximum
-    if values[find_from_index] > first_maximum:
-        return find_second_max_value(values, values[find_from_index],
-            first_maximum, find_from_index + 1)
     if values[find_from_index] > second_maximum:
-        return find_second_max_value(values, first_maximum,
-            values[find_from_index], find_from_index + 1)
+        second_maximum = values[find_from_index]
+    if values[find_from_index] > first_maximum:
+        second_maximum = first_maximum
+        first_maximum = values[find_from_index]
     return find_second_max_value(values, first_maximum, second_maximum, find_from_index + 1)
 
 def find_second_maximum(values : list[int]) -> int | None:
