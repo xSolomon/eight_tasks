@@ -17,5 +17,4 @@ def find_second_maximum(values : list[int]) -> int | None:
         Returns None if list is not big enough. '''
     if len(values) < 2:
         return None
-    return find_second_max_value(values, values[0], values[1], 2) if values[0] > values[1] else \
-        find_second_max_value(values, values[1], values[0], 2)
+    return find_second_max_value(values, max(values[0], values[1]), min(values[0], values[1]), 2)
